@@ -91,7 +91,8 @@ function verifyId(song, callback) {
     if (song[provider + '_id']) {
       providers[provider].fetchSongById(song[provider + '_id'], function (err, verifiedSong) {
         if (err) {
-          callback(new Error('Could not verify song by' + provider + 'ID', null));
+          callback(err, null);
+          // callback(new Error('Could not verify song by' + provider + 'ID', null));
         } else {
           callback(null, verifiedSong);
         }
