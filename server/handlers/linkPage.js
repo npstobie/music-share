@@ -50,7 +50,7 @@ function sendNonProvider (req, res, songFromDb) {
   var templateObj = {
     title : songFromDb.title,
     artist : songFromDb.artist,
-    album_art : songFromDb.spotify_images.large_image.url ? songFromDb.spotify_images.large_image.url : songFromDb.album_art,
+    album_art : songFromDb.spotify_images ? songFromDb.spotify_images.large_image.url : songFromDb.album_art,
     providers : createProvidersArray(songFromDb),
     clicks : songFromDb.clicks,
     creates : songFromDb.creates
